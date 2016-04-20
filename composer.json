@@ -1,0 +1,20 @@
+{
+    "name": "plance/yii2-widget-disqus",
+    "description": "Yii2 Disqus widget",
+    "type": "yii2-extension",
+    "keywords": ["yii2","widget"],
+    "license": "GPL-2.0",
+    "authors": [
+        {
+            "name": "Pavel"
+        }
+    ],
+    "require": {
+        "yiisoft/yii2": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "plance\\widget\\": ""
+        }
+    }
+}
