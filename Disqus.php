@@ -5,12 +5,12 @@ use Yii;
 
 class Disqus extends yii\base\Widget
 {
-	public $disqus_shortname;
+	public $disqus_shortname = null;
 	public $disqus_url = null;
 	
     public function run()
     {
-		if(isset(Yii::$app -> params['disqus_shortname']) && Yii::$app -> params['disqus_shortname'])
+		if($this -> disqus_shortname)
 		{
 			$Request = Yii::$app -> getRequest();
 			
@@ -24,7 +24,7 @@ class Disqus extends yii\base\Widget
 			}
 			
 			return $this -> render('disqus',[
-				'disqus_shortname' => Yii::$app -> params['disqus_shortname'],
+				'disqus_shortname' => $this -> disqus_shortname,
 				'disqus_url' => $disqus_url,
 			]);
 		}

@@ -24,18 +24,16 @@ to the require section of your `composer.json` file.
 Usage
 -----
 
-Create "disqus_shortname" in web.php config file:
+Set next code in your config.php file. Where is "disqus_shortname" set disqus shortname:
 ```php
-'params' => [
-	/* ... */
-	'disqus_shortname' => 'your disqus shortname',
-	/* ... */
-],
+Yii::$container -> set('plance\widget\Disqus', [
+	'disqus_shortname' => 'xxx'
+]);
 ```
 
-Set this code in your view, if Disqus, using this url page:
+Set this code in your view, if Disqus, using current url page:
 ```php
-<?php echo Disqus::widget(); ?>
+<?php echo  Yii::$app -> Disqus -> widget(); ?>
 ```
 
 or this, if you need another url:
